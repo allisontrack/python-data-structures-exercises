@@ -1,7 +1,7 @@
-def partition(lst, fn):
+def partition(list, fn):
     """Partition lst by predicate.
      
-     - lst: list of items
+     - list: list of items
      - fn: function that returns True or False
      
      Returns new list: [a, b], where `a` are items that passed fn test,
@@ -19,3 +19,8 @@ def partition(lst, fn):
         >>> partition(["hi", None, 6, "bye"], is_string)
         [['hi', 'bye'], [None, 6]]
     """
+
+    passed = [item for item in list if fn(item) == True]
+    failed = [item for item in list if fn(item) == False]
+    return [passed, failed]
+

@@ -13,3 +13,16 @@ def triple_and_filter(nums):
         >>> triple_and_filter([1, 2])
         []
     """
+
+    def filter_nums(num):
+        if num % 4 == 0:
+            return True
+        else:
+            return False
+    
+    divisible_by_four = filter(filter_nums, nums)
+
+    return [num * 3 for num in divisible_by_four]
+
+print(triple_and_filter([1, 2, 3, 4]))
+print(triple_and_filter([6, 8, 10, 12]))
