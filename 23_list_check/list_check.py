@@ -1,4 +1,4 @@
-def list_check(list):
+def list_check(lst):
     """Are all items in lst a list?
 
         >>> list_check([[1], [2, 3]])
@@ -8,11 +8,10 @@ def list_check(list):
         False
     """
 
-    for item in list:
+    for item in lst:
         if not isinstance(item, list):
             return False
-        else:
-            return True
+    return True
 
 
 print(list_check([[1], [2, 3]]))
